@@ -1,19 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    var nodes = document.querySelectorAll('.overlay');
-    console.log(nodes);
+    var contentSegments = document.querySelectorAll('.content-segment');
 
     var colours = [
-        "#F44336",
+        "#616161",
         "#9C27B0",
-        "#00BCD4",
-        "#4CAF50"
+        "#F44336",
+        "#1565C0"
+    ];
+
+    var images = [
+        "./images/logo.svg",
+        "./images/logo.svg",
+        "./images/logo.svg",
+        "./images/logo.svg"
     ];
 
     var colourCounter = 0;
-    for(var i = 0; i < nodes.length; i++, colourCounter++) {
-        console.log(i, colourCounter);
-        nodes[i].style.backgroundColor = colours[colourCounter];
+    for(let i = 0; i < contentSegments.length; i++, colourCounter++) {
+        contentSegments[i].style.backgroundImage = `url('${images[i]}')`;
+        contentSegments[i].firstElementChild.style.backgroundColor = colours[colourCounter];
         if (colourCounter == colours.length - 1) { colourCounter = -1; }
     }
 

@@ -64,7 +64,7 @@ li a.active {
 }
 
 .heading {
-    color: #d3d3d3;
+    color: #111111;
     font-size: 3em;
     letter-spacing: 0.05em;
     text-align: center;
@@ -72,12 +72,12 @@ li a.active {
 }
 
 .heading:before {
-    content: '<';
+    content: '|';
     font-size: 1.3em;
 }
 
 .heading:after {
-    content: '>';
+    content: '|';
     font-size: 1.3em;
 }
 
@@ -91,9 +91,10 @@ li a.active {
 .content-segment {
     float: left;
     width: 50%;
+    /* height: calc(100vw / 2); */
     height: 50%;
     text-align: center;
-    background-color: #E0E0E0;
+    background-color: #9E9E9E;
     background-size: cover;
 }
 
@@ -122,7 +123,7 @@ li a.active {
 
 .overlay:hover {
     background-color: #424242;
-    opacity: 0.8;
+    opacity: 0.98;
 }
 
 .overlay-content-heading {

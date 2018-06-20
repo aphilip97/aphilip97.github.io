@@ -2,24 +2,41 @@
 <html>
 
 <head>
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-	<link rel="stylesheet" href="css/gameoflife.css" type="text/css">
-	<title>Game Of Life</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="css/gameoflife.css" type="text/css">
+  <title>Game Of Life</title>
 </head>
 
 <body>
-	<p id="gen-count">0 : Generations</p>
-	<div id="controls">
-		<p>Controls</p>
-		<ul>
-			<li>P : Play / Pause</li>
-			<li>S : Step</li>
-			<li>C : Clear</li>
-			<li>Click : Toggle State</li>
-		</ul>
-	</div>
-	<canvas id="canvas"></canvas>
-	<script src="js/gameoflife.js" type="text/javascript"></script>
+  <div id="back-arrow">
+    <a href="./index.html">
+      <svg title="back-arrow-24px" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path stroke="#fff" fill="#fff" d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z" />
+        <path fill="none" d="M0 0h24v24H0z" />
+      </svg>
+      <span>Home</span>
+    </a>
+  </div>
+  <canvas id="canvas"></canvas>
+  <div id="segment-info">
+    <div class="info">
+      <h3>Info</h3>
+      <p id="gen-count">Generations : 0</p>
+    </div>
+  </div>
+  <div id="segment-controls">
+    <div class="info">
+      <h3>Controls</h3>
+      <ul>
+        <li>P : Play / Pause</li>
+        <li>S : Step</li>
+        <li>C : Clear</li>
+        <li>G : Toggle Grid</li>
+        <li>Click : Toggle State</li>
+      </ul>
+    </div>
+  </div>
+  <script src="js/gameoflife.js" type="text/javascript"></script>
 </body>
 
 </html>

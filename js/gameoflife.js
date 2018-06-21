@@ -44,19 +44,28 @@ document.addEventListener('DOMContentLoaded', function(DOMEvent) {
   var canvas = document.querySelector('#canvas');
   var ctx = canvas.getContext('2d');
 
-  const cellSize = 12 + 1;
-  const cols = 64;
-  const rows = 64;
-  const WIDTH = (canvas.width = cols * cellSize);
-  const HEIGHT = (canvas.height = rows * cellSize);
+  // canvas.width and canvas.height are the height and width of the drawing area
+  // use canvas.clientWidth and canvas.clientHeight to get the width and height of the canvas ELEMENT
+
+  const cellSize = 12;
+  canvas.width = canvas.clientWidth;
+  canvas.height = canvas.clientHeight;
+  const cols = Math.floor(canvas.width / cellSize);
+  const rows = Math.floor(canvas.width / cellSize);
+  
+  const WIDTH = cols * cellSize;
+  canvas.width = cols * cellSize;
+  const HEIGHT = cols * cellSize;
+  canvas.height = rows * cellSize;
 
   var paused = true;
   var displayGrid = true;
   var genCount = 0;
   var genCountDisplay = document.querySelector('#gen-count');
   var gradient = ctx.createLinearGradient(0, 0, 0, HEIGHT);
-  gradient.addColorStop(0, '#bdc3c7');
-  gradient.addColorStop(1, '#2c3e50');
+  gradient.addColorStop(0, '#0f2027');
+  gradient.addColorStop(0.5, '#203a43');
+  gradient.addColorStop(1, '#2c5364');
 
   var grid = new Matrix(cols, rows);
   var next = new Matrix(cols, rows);
@@ -142,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function(DOMEvent) {
   setup();
   draw();
 
-  const timer = new Timer(1 / 60);
+  const timer = new Timer(1 / 10);
   timer.update = function() {
     if (!paused) {
       update();
@@ -168,6 +177,8 @@ document.addEventListener('DOMContentLoaded', function(DOMEvent) {
   document.addEventListener('mousedown', event => {
     let gridX = (window.innerWidth - WIDTH) / 2;
     let gridY = (window.innerHeight - HEIGHT) / 2;
+    // var rect = canvas.getBoundingClientRect();
+    // console.log(rect.top, rect.right, rect.bottom, rect.left);
     if (
       event.clientX < gridX ||
       event.clientX > gridX + WIDTH ||

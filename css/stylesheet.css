@@ -6,31 +6,27 @@
 }
 
 html {
-  height: 100%;
-  background-image: url('../images/Mountain_By_Paul_Gilmore.jpg');
-  background-size: 100%;
-  background-attachment: fixed;
+  background: linear-gradient(#2980B9, #6DD5FA, #cef1fd);
 }
 
 body {
   overflow-x: hidden;
-  overflow-y: auto;
-  height: 100%;
   min-height: 100vh;
   color: #e7e8ea;
-  font-family: 'Chivo', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 18px;
-  line-height: 1.8em;
-  letter-spacing: 0.02em;
-  text-rendering: optimizeLegibility;
+  letter-spacing: 0.2em; /* keep this ?*/
+}
+
+header {
+  height: 100px;
+}
+
+header nav {
+  height: 100%;
 }
 
 ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -38,18 +34,17 @@ li {
   float: left;
   width: calc(100vw / 5);
   text-align: center;
-  padding: 20px 0px 20px 0px;
+  height: 100%;
+  padding: 25px 0;
 }
 
 li a {
-  display: inline-block;
   color: #e7e8ea;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: uppercase; /* keep? could type in uppercase */
   transition: 0.3s;
   font-size: 1.5rem;
-  margin: 20px 0px;
 }
 
 li a.active {
@@ -66,6 +61,10 @@ li a.active:hover {
   color: #000000;
 }
 
+#logo {
+  transform: translateY(12.5%);
+}
+
 #logo .logo-rect {
   transition: 0.3s;
 }
@@ -75,12 +74,13 @@ li a.active:hover {
 }
 
 .heading {
+  height: 150px;
   color: #e7e8ea;
-  font-size: 3em;
-  letter-spacing: 0.05em;
+  font-size: 3rem;
+  line-height: 1.8rem;
   text-align: center;
   text-transform: uppercase;
-  padding: 50px 0 50px 0;
+  padding: 50px 0;
   font-weight: 800;
 }
 
@@ -96,16 +96,12 @@ li a.active:hover {
 
 .content-wrapper {
   width: 100%;
-  height: 100%;
-  position: relative;
 }
 
 .content-segment {
   display: block;
-  margin: 30px auto;
-  width: 60%;
-  height: 60%;
-  text-align: center;
+  margin: 0 auto 30px auto;
+  width: 65%;
   background-color: #e7e8ea;
   background-size: cover;
 }
@@ -118,35 +114,39 @@ li a.active:hover {
   transition: 0.3s;
 }
 
+.overlay:hover {
+  opacity: 1;
+}
+
 .overlay-content {
   position: absolute;
   width: 100%;
   height: 50%;
   top: 50%;
-  color: #000000;
   transform: translateY(-50%);
+  color: #000000;
+  text-align: center;
   transition: 0.3s;
 }
 
-.overlay:hover {
-  opacity: 0.98;
-}
-
-/* .content-segment:last-of-type .overlay .overlay-content * {
-  color: #000000;
-} */
-
 .overlay-content-heading {
+  position: relative;
   height: 50%;
-  font-size: 5em;
-  padding: 0;
-  line-height: 1em;
+  font-size: 3rem;
   text-transform: uppercase;
 }
 
 .overlay-content-description {
+  position: relative;
   height: 50%;
   font-size: 2em;
+}
+
+.overlay-content-heading span, .overlay-content-description span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 ::-webkit-scrollbar {

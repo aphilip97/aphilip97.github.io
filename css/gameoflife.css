@@ -10,8 +10,7 @@ body {
   width: 100vw;
   height: 100vh;
   position: relative;
-  background-image: url("../images/Mountain_By_Paul_Gilmore.jpg");
-  background-size: 100% 100%;
+  background: linear-gradient(#2980B9, #6DD5FA, #cef1fd);
 }
 
 #segment-info {
@@ -54,6 +53,9 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0 auto;
+  width: 90vh;
+  height: 90vh;
+  /* background-color: #2980B9; */
 }
 
 #back-arrow {
@@ -85,6 +87,16 @@ body {
 #back-arrow:hover a span {
   opacity: 1;
 }
+
+/* @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  #back-arrow a span {
+    opacity: 1;
+  }
+
+  #back-arrow:hover a span {
+    opacity: 1;
+  }
+} */
 
 ::-webkit-scrollbar {
   display: none;
